@@ -117,28 +117,44 @@ import time
 
 
 # develop a number gusser game with 3 change with score system
+global score
 score=0
 times=0
 print("Hello! Welcome to guess the number game!")
 print("-"*50)
 print("Generating Game...")
 time.sleep(1.5)
-print("I have picked a Random number from 0 to 15")
+print("I have picked a Random number from 0 to 10")
 print("Score :",score)
-num = random.randint(0,15)
+num = random.randint(0,10)
 
 
-# def game():
-#     if(times == 3):
-        
-#     else:
-#        if user_input==num:
-#            print("Yaa Hoo! You Gussed it Correct!")
-#            print("Score :",score)
-#            print("-"*50)
-#            score+=10
-#        else:
-#             print("No! You are wrong")
-#             game()
+def game():
+    global score
+    score=0
+    user_input=int(input("Enter Your Gussed Number : "))
+    if(times == 3):
+        print("You Loose!")
+        c=input("want to play again? (Y) or (N)").strip().lower()
+        if c == "y":
+            game()
+        else:
+            pass
+    else:
+       if user_input==num:
+           print("Yaa Hoo! You Gussed it Correct!")
+           print("-"*50)
+           score+=10
+           print("Score :",score)
+           d=input("do you want To continue (Y) or (N)? : ")
+           if d == "y":
+               game()
+           else:
+               pass
+
+       else:
+            print("No! You are wrong")
+            game()
 
 
+game()
