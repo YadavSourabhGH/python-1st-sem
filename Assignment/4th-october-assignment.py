@@ -10,7 +10,7 @@
 
 
 
-# #check if number enterd is 3 digit
+#check if number enterd is 3 digit
 
 # num = input("Enter the number : ")
 
