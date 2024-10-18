@@ -53,7 +53,7 @@
 import math
 import random
 import time
-
+import os
 # print(dir(math))
 # print(math.pi)
 # print(math.factorial(15))
@@ -119,42 +119,60 @@ import time
 # develop a number gusser game with 3 change with score system
 global score
 score=0
+global times
 times=0
 print("Hello! Welcome to guess the number game!")
+
+time.sleep(1)
+print("You have total 3 try to guess a number")
 print("-"*50)
+time.sleep(1)
+
 print("Generating Game...")
 time.sleep(1.5)
 print("I have picked a Random number from 0 to 10")
 print("Score :",score)
+global num
 num = random.randint(0,10)
 
 
 def game():
     global score
     score=0
-    user_input=int(input("Enter Your Gussed Number : "))
-    if(times == 3):
-        print("You Loose!")
-        c=input("want to play again? (Y) or (N)").strip().lower()
-        if c == "y":
+    global times
+    global num
+    global user_input
+    user_input=int(input(f'Enter Your Gussed Number (Try {times+1}): '))
+
+    if user_input==num:
+        print("Yaa Hoo! You Gussed it Correct!")
+        print("-"*50)
+        score+=10
+        print("Score :",score)
+        d=input("do you want To continue (Y) or (N)? : ")
+        if d == "y":
+            print("-"*50)
+            print("Generating Game...")
+            time.sleep(1.5)
+            print("I have picked a Random number from 0 to 10")
+            print("Score :",score)
+            num = random.randint(0,10)
+            times = 0
             game()
         else:
-            pass
-    else:
-       if user_input==num:
-           print("Yaa Hoo! You Gussed it Correct!")
-           print("-"*50)
-           score+=10
-           print("Score :",score)
-           d=input("do you want To continue (Y) or (N)? : ")
-           if d == "y":
-               game()
-           else:
-               pass
-
-       else:
+            times+=1
+            print("-"*50)
             print("No! You are wrong")
-            game()
+            if times == 2:
+                print("You Loose!")
+                print(f'The Number was : {num}')
+                c=input("want to play again? (Y) or (N)").strip().lower()
+                if c == "y":
+                    game()
+                else:
+                    print("Hint: guessed number is greater then my Number" if user_input>num else "Hint: guessed number is lower then my number")
+                    game()
+        
 
 
 game()
