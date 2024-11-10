@@ -31,7 +31,8 @@
 # print(example(3,0))
 
 
-
+# print( 36/4 *(3+2)* 4+2) 
+# 182.0
 
 # 3. Write a Python program that prompts the user to input an integer and raises a ValueError exception if the input is not a valid integer.
 

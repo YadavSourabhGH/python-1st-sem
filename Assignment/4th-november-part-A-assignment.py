@@ -96,3 +96,70 @@ print(read_file.readlines()) # return list which contains all lines as a list el
 # lines = ["hello world\n", "this is python\n", "welcome to py"]
 # write_file.writelines(lines)
 # write_file.close()
+
+
+
+
+# # 5. Write a Python program to read first n lines of a file.
+
+# read_file = open("read_file_test.txt","w")
+# read_file.write("Hello World\nWelcome to python\nReady to explore?\nReady To Learn?\nReady For the challenge?")
+# read_file.close()
+# read_file = open("read_file_test.txt","r")
+# i=1
+# n=int(input("Enter n value (No of line to read):"))
+# while i<=n:
+#     print(read_file.readline())
+#     i+=1
+
+
+
+
+# # 6. Write a Python program to append text to a file and display the text.
+
+# append_file = open("append_file.txt","a")
+# text="Hello world"
+# append_file.write(text+"\n")
+# append_file.close()
+# append_file_read=open("append_file.txt","r")
+# print(append_file_read.read())
+
+
+
+
+# # 7. Write a Python program to read last n lines of a file
+
+# read_file = open("read_file_test.txt","w")
+# read_file.write("Hello World\nWelcome to python\nReady to explore?\nReady To Learn?\nReady For the challenge?")
+# read_file.close()
+# read_file = open("read_file_test.txt","r")
+# i=1
+# n=int(input("Enter n value (No of line to read):"))
+# lines=read_file.readlines()
+# while i<=n:
+#     print(lines[-i])
+#     i+=1
+
+
+
+
+
+# # 8. Write a Python program to read a file line by line and store it into a list.
+
+# read_file = open("read_file_test.txt","w")
+# read_file.write("Hello World\nWelcome to python\nReady to explore?\nReady To Learn?\nReady For the challenge?")
+# read_file.close()
+# read_file = open("read_file_test.txt","r")
+
+# flag=True
+# lines_list=[]
+# i=0
+# while flag:
+#     line=read_file.readline()
+#     if line == "":
+#         flag=False
+#     else:
+#         lines_list.append(line)
+#         print(line)
+        
+# print(lines_list)
